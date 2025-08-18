@@ -1,37 +1,12 @@
 from telegram.ext import (
-    Updater, CallbackContext, 
+    Updater, 
     CommandHandler, MessageHandler, Filters,
 )
-from telegram import Update
 from config import TOKEN
-
-
-def start_command(update: Update, context: CallbackContext):
-    update.message.reply_text("Salom")
-
-
-def help_command(update: Update, context: CallbackContext):
-    update.message.reply_text("Nima yordam")
-
-
-def hendle_text(update: Update, context: CallbackContext):
-    update.message.reply_text("xabar qabul qilindi")
-
-
-def hendle_settings(update: Update, context: CallbackContext):
-    update.message.reply_text("siz sozlamalar bolimidasiz")
-
-
-def hendle_contact(update: Update, context: CallbackContext):
-    update.message.reply_text("Contact qabul qlindi")
-
-
-def hendle_location(update: Update, context: CallbackContext):
-    update.message.reply_text("Location qabul qilindi")
-
-
-def hendle_photo(update: Update, context: CallbackContext):
-    update.message.reply_text("Rasm qabul tilindi")
+from handlers import (
+    start_command, help_command,
+    hendle_settings, hendle_text, hendle_contact, hendle_location, hendle_photo,
+)
 
 
 def main() -> None:
